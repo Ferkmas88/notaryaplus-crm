@@ -1,4 +1,4 @@
-export type SourceId = "web" | "facebook" | "google" | "instagram" | "clientes360" | "flyer";
+export type SourceId = "web" | "facebook" | "google" | "instagram" | "flyer";
 
 export interface Source {
   id: SourceId;
@@ -46,15 +46,6 @@ export const SOURCES: Source[] = [
     message: "Hola, vengo desde Instagram.",
     color: "#E1306C",
     dotColor: "#E1306C",
-  },
-  {
-    id: "clientes360",
-    label: "Clientes 360",
-    icon: "🎯",
-    description: "Plataforma Clientes360 (Digital AM)",
-    message: "Hola, vengo desde la plataforma Clientes360.",
-    color: "#C9A227",
-    dotColor: "#C9A227",
   },
   {
     id: "flyer",
