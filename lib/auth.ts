@@ -46,10 +46,11 @@ export function clearSessionCookie() {
 }
 
 export function checkPassword(input: string): boolean {
-  const expected = process.env.DASHBOARD_PASSWORD || "";
+  const expected = (process.env.DASHBOARD_PASSWORD || "").trim();
+  const cleaned = (input || "").trim();
   if (!expected) return false;
   // constant-time compare
-  const a = Buffer.from(input);
+  const a = Buffer.from(cleaned);
   const b = Buffer.from(expected);
   if (a.length !== b.length) return false;
   return crypto.timingSafeEqual(a, b);
